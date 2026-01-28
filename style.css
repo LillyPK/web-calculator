@@ -1,0 +1,85 @@
+:root {
+    --grid-unit: 1rem;
+    --border-radius-base: 100rem;
+    --color-bg: #000000;
+    --color-fg: #ffffff;
+    --button-color: #333333;
+    --button-foreground: #ffeb3b;
+    --operator-foreground: #bb86fc;
+    --clear-foreground: #ff5555;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg: #000000;
+        --color-fg: #ffffff;
+        --button-color: #333333;
+        --button-foreground: #ffeb3b;
+        --operator-foreground: #bb86fc;
+        --clear-foreground: #ff5555;
+    }
+
+    hr.custom-line {
+        background-color: #666;
+    }
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    margin: 0;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+hr.custom-line {
+    border: none;
+    height: 3px;
+    background-color: #333;
+    width: 95%;
+    margin: 1rem auto;
+}
+
+.btn-group {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+    flex: 1;
+    padding: 0.3rem;
+}
+
+button {
+    background-color: var(--button-color);
+    color: var(--color-fg);
+    border: none;
+    border-radius: var(--border-radius-base);
+    font-size: 10cqmin;
+    cursor: pointer;
+    min-height: 50px;
+    container-type: size;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Clear button - red text */
+button.clear {
+    color: var(--clear-foreground);
+}
+
+/* Operator buttons - purple text */
+button.operator {
+    color: var(--operator-foreground);
+}
+
+/* Equals button - yellow text, purple background */
+button.equals {
+    color: var(--button-foreground);
+    background-color: var(--operator-foreground);
+}
